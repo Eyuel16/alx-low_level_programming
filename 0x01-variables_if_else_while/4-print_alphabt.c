@@ -7,7 +7,7 @@ int main(void)
 {
 	int i;
 
-	for (i = 98, i < 123, i++)
+	for (i = 98; i < 123; i++)
 	{
 		if (i == 101 || i == 113)
 			continue;
