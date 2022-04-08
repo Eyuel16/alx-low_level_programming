@@ -16,8 +16,10 @@ int main(void)
 				putchar(i);
 				putchar(j);
 				if (i != 55)
+				{
 					putchar(',');
 					putchar(' ');
+				}
 			}
 		}
 	}
