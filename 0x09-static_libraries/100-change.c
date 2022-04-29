@@ -1,47 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* main - prints the minimum number of coins to make change for a given amount
-* @argc: arguement count
-* @argv: array of pointers to arguement strings
-* Return: number of coins or 1
-**/
+ * main - Entry Point
+ * @argc : counter
+ * @argv : pointer of arguments
+ * Return:integer
+ */
 int main(int argc, char *argv[])
 {
-	int amount, coins;
+	int sum = 0;
 
-	if (argc != 2)
+	if (argc == 1)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	amount = atoi(argv[1]);
-	coins = 0;
-	if (amount > 25)
+	else if (atoi(argv[1]) < 0)
 	{
-		while (amount >= 25)
-			amount -= 25, coins++;
+		printf("%d\n", 0);
+		return (0);
 	}
-	if (amount > 10 && amount < 25)
+	else
 	{
-		while (amount >= 10)
-			amount -= 10, coins++;
-	}
-	if (amount > 5 && amount < 10)
-	{
-		while (amount >= 5)
-			amount -= 5, coins++;
-	}
-	if (amount > 2 && amount < 5)
-	{
-		while (amount >= 2)
-			amount -= 2, coins++;
-	}
-	if (amount == 1 || amount == 2 || amount == 5 ||
-	    amount == 10 || amount == 25)
-	{
-		coins++;
-	}
-	printf("%d\n", coins);
-	return (0);
+		if (atoi(argv[1]) >= 25)
+		{
+			sum += atoi(argv[1]) / 25;
+			sprintf(argv[1],"%d", atoi(argv[1]) % 25);
+		}
+		if (atoi(argv[1]) >= 10)
+		{
+			sum += atoi(argv[1]) / 10;
+			sprintf(argv[1],"%d", atoi(argv[1]) % 10);
+		}
+		if (atoi(argv[1]) >= 5)
+		{
+			 sum += atoi(argv[1]) / 5;
+			 sprintf(argv[1],"%d", atoi(argv[1]) % 5);
+		}
+		if (atoi(argv[1]) >= 2)
+		{
+			sum += atoi(argv[1]) / 2;
+			sprintf(argv[1],"%d", atoi(argv[1]) % 2);
+		}
+		if (atoi(argv[1]) == 1)
+		{
+			sum += 1;
+		}
+		printf("%d\n", sum);
+		return (0);
+	} 
 }
