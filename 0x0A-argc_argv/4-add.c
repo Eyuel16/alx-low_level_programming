@@ -24,17 +24,19 @@ int main(int argc, char *argv[])
 		printf("%d\n", 0);
 	}
 
-	for (p = argv[i]; p != NULL; i++)
+	while (argv[i] != '\0')
 	{
-		for (argv[i][j]; argv[i][j] != '\0'; j++)
+		while (argv[i][j] != '\0')
 		{
 			if (!(isdigit(argv[i][j])))
 			{
 				printf("Error\n");
 				return (1);
 			}
+			j++;
 		}
 		sum += argv[i];
+		i++;
 	}
 	printf("%d\n", sum);
 	return (0);
