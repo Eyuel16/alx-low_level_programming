@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  * @argc: the number of argumets used
- * @argv: an array containig the arguments 
+ * @argv: an array containig the arguments
  * Return: 0
  */
 int main(int argc, char* argv[] __attribute__((unused)))
