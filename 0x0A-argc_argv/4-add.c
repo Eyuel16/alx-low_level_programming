@@ -13,7 +13,6 @@
 int main(int argc, char *argv[])
 {
 	unsigned int i, j, sum;
-	char *p;
 
 	sum = 0;
 	i = 1;
@@ -35,7 +34,7 @@ int main(int argc, char *argv[])
 			}
 			j++;
 		}
-		sum += argv[i];
+		sum += atoi(argv[i]);
 		i++;
 	}
 	printf("%d\n", sum);
